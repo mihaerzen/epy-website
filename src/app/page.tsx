@@ -4,9 +4,9 @@ import avtoelektrikaImg from "./avtoelektrika_1.jpg"
 import chipTuningImg from "./chipTuning_1.jpg"
 import Link from "next/link";
 import {FC} from "react";
-import {Container} from '@/Components/Container'
+import {Container} from '@/components/Container'
 import {LINK_CLASS_NAME} from "@/constants";
-import {Hyperlink} from "@/Components/Hyperlink";
+import {Hyperlink} from "@/components/Hyperlink";
 
 
 const Item: FC<{

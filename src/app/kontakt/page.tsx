@@ -1,6 +1,6 @@
-import {Container} from '@/Components/Container'
-import {Heading1, Paragraph} from "@/Components/Heading";
-import {Hyperlink} from "@/Components/Hyperlink";
+import {Container} from '@/components/Container'
+import {Heading1, Paragraph} from "@/components/Heading";
+import {Hyperlink} from "@/components/Hyperlink";
 
 export default function Kontakt() {
   return <>

@@ -1,11 +1,11 @@
 import './globals.css'
 import {Inter} from 'next/font/google'
-import {Container} from "@/Components/Container";
+import {Container} from "@/components/Container";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/app/logo.png";
 import bottomGraphics from "@/app/bottomGraphics.png";
-import {MenuItem} from "@/Components/MenuItem";
+import {MenuItem} from "@/components/MenuItem";
 
 const inter = Inter({subsets: ['latin']})
 

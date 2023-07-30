@@ -1,5 +1,6 @@
 import {Container} from '@/Components/Container'
-import {Heading1, Heading2, Hyperlink, Paragraph} from "@/Components/Heading";
+import {Heading1, Heading2, Paragraph} from "@/Components/Heading";
+import {Hyperlink} from "@/Components/Hyperlink";
 
 export default function ChipTuning() {
   return <>

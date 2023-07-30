@@ -1,5 +1,6 @@
 import {Container} from '@/Components/Container'
-import {Heading1, Heading2, Heading3, Heading4, Hyperlink, OList, OLitem, Paragraph, UList, ULitem} from "@/Components/Heading";
+import {Heading1, Heading2, Heading3, Heading4, OList, OLitem, Paragraph, UList, ULitem} from "@/Components/Heading";
+import {Hyperlink} from "@/Components/Hyperlink";
 
 export default function Avtolektronika() {
   return <>

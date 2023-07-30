@@ -11,7 +11,6 @@ export const MenuItem: FC<PropsWithChildren<
     href: string;
   }>> = ({children, href}) => {
   const pathname = usePathname()
-
   const active = href !== '/' && pathname.startsWith(href)
 
   return (

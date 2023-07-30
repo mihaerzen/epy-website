@@ -2,11 +2,11 @@ import Image, {StaticImageData} from 'next/image'
 
 import avtoelektrikaImg from "./avtoelektrika_1.jpg"
 import chipTuningImg from "./chipTuning_1.jpg"
-import bottomGraphics from "./bottomGraphics.png"
 import Link from "next/link";
 import {FC} from "react";
 import {Container} from '@/Components/Container'
 import {LINK_CLASS_NAME} from "@/constants";
+import { Hyperlink } from '@/Components/Heading';
 
 
 const Item: FC<{
@@ -25,7 +25,7 @@ const Item: FC<{
       {description}
     </p>
 
-    <Link href={href} className={`text-epj-red hover:text-white ${LINK_CLASS_NAME}`}>PREBERI VEČ</Link>
+    <Hyperlink href={href}>PREBERI VEČ</Hyperlink>
   </div>
 }
 

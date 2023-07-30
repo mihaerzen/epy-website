@@ -1,1 +1,1 @@
-export const LINK_CLASS_NAME = 'uppercase text-sm transition-colors ease-in duration-200'
+export const LINK_CLASS_NAME = 'uppercase transition-colors ease-in duration-200'

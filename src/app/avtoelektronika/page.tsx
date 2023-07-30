@@ -1,18 +1,17 @@
 import {Container} from '@/Components/Container'
-import {Heading1, Heading2, Heading3, Heading4, OList, OLitem, Paragraph, UList, ULitem} from "@/Components/Heading";
-import Link from "next/dist/client/link";
+import {Heading1, Heading2, Heading3, Heading4, Hyperlink, OList, OLitem, Paragraph, UList, ULitem} from "@/Components/Heading";
 
 export default function Avtolektronika() {
   return <>
     <Container>
         <Heading1>
-          AVTOELEKTRONIKA
+          <Hyperlink href="/avtoelektronika">AVTOELEKTRONIKA</Hyperlink>
         </Heading1>
 
         <Paragraph>Popravilo avtomobilske elektronike (avtoelektronike) je naša primarna dejavnost.</Paragraph>
 
         <Heading2 id="diagnostika">
-          <Link href="#diagnostika">DIAGNOSTIKA</Link>
+          <Hyperlink href="#diagnostika">DIAGNOSTIKA</Hyperlink>
         </Heading2>
 
         <Paragraph>Za diagnosticiranje vašega avtomobila uporabljamo najsodobnejše testerje<br/>
@@ -26,17 +25,17 @@ export default function Avtolektronika() {
         </UList>
 
         <Heading3 id="odprava_napak">
-          <Link href="#odprava_napak">ODPRAVA NAPAK</Link>
+          <Hyperlink href="#odprava_napak">ODPRAVA NAPAK</Hyperlink>
         </Heading3>
 
         <Paragraph>Rešujemo in odpravljamo napake na vseh avtomobilskih znamkah.</Paragraph>
 
         <Heading3 id="najbolj_pogoste_napake">
-          <a href="#najbolj_pogoste_napake">Najbolj pogoste napake</a>
+          <Hyperlink href="#najbolj_pogoste_napake">Najbolj pogoste napake</Hyperlink>
         </Heading3>
 
         <Heading4 id="Audi">
-          <a href="#Audi">Audi</a>
+          <Hyperlink href="#Audi">Audi</Hyperlink>
         </Heading4>
 
         <OList>
@@ -44,7 +43,7 @@ export default function Avtolektronika() {
         </OList>
 
         <Heading4 id="Fiat">
-          <a href="#Fiat">Fiat</a>
+          <Hyperlink href="#Fiat">Fiat</Hyperlink>
         </Heading4>
 
         <OList>
@@ -53,7 +52,7 @@ export default function Avtolektronika() {
         </OList>
 
         <Heading4 id="Mercedes">
-          <a href="#Mercedes">Mercedes</a>
+          <Hyperlink href="#Mercedes">Mercedes</Hyperlink>
         </Heading4>
 
 
@@ -70,7 +69,7 @@ export default function Avtolektronika() {
         </OList>
 
         <Heading4 id="Opel">
-          <a href="#Opel">Opel</a>
+          <Hyperlink href="#Opel">Opel</Hyperlink>
         </Heading4>
 
         <OList>
@@ -80,7 +79,7 @@ export default function Avtolektronika() {
         </OList>
 
         <Heading4 id="Renault">
-          <a href="#Renault">Renault</a>
+          <Hyperlink href="#Renault">Renault</Hyperlink>
         </Heading4>
 
         <OList>
@@ -88,7 +87,7 @@ export default function Avtolektronika() {
         </OList>
 
         <Heading4 id="Seat">
-          <a href="#Seat">Seat</a>
+          <Hyperlink href="#Seat">Seat</Hyperlink>
         </Heading4>
 
         <OList>
@@ -100,7 +99,7 @@ export default function Avtolektronika() {
         </OList>
 
         <Heading4 id="Škoda">
-          <a href="#Škoda">Škoda</a>
+          <Hyperlink href="#Škoda">Škoda</Hyperlink>
         </Heading4>
 
         <OList>
@@ -110,7 +109,7 @@ export default function Avtolektronika() {
         </OList>
 
         <Heading4 id="Volvo">
-          <a href="#Volvo">Volvo</a>
+          <Hyperlink href="#Volvo">Volvo</Hyperlink>
         </Heading4>
 
         <OList>
@@ -122,7 +121,7 @@ export default function Avtolektronika() {
         </OList>
 
         <Heading4 id="VW (Volkswagen)">
-          <a href="#VW (Volkswagen)">VW (Volkswagen)</a>
+          <Hyperlink href="#VW (Volkswagen)">VW (Volkswagen)</Hyperlink>
         </Heading4>
 
         <OList>

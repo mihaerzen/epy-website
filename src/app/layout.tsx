@@ -17,14 +17,14 @@ export default function RootLayout({
   return (
     <html lang="sl">
     <body
-      className={`${inter.className} text-white bg-black bg-[url(/back.jpg)] bg-no-repeat bg-fixed bg-[center_top] min-h-screen flex flex-col`}>
+      className={`${inter.className} min-w-[450px] text-white bg-black bg-[url(/back.jpg)] bg-no-repeat bg-fixed bg-[center_top] min-h-screen flex flex-col`}>
     <nav className="bg-epj-red mb-16">
       <Container className="relative h-[100px]">
         <Link href="/" className="block absolute left-0 -bottom-9 w-[450px] h-[112px]">
           <Image src={logo} alt="Avtolektrika" width={450} height={112}/>
         </Link>
 
-        <menu className="absolute left-60 bottom-4 flex gap-8">
+        <menu className="absolute bg-epj-red -bottom-11 flex gap-8 sm:bg-none sm:left-60 sm:bottom-4 items-center">
           <MenuItem href="/">
             Domov
           </MenuItem>

@@ -43,7 +43,7 @@ export default function RootLayout({
           <MenuItem href="/avtoelektronika">
             Avtoelektronika
           </MenuItem>
-          <MenuItem href="/">
+          <MenuItem href="/chip-tuning">
             Chip Tuning
           </MenuItem>
           <MenuItem href="/">

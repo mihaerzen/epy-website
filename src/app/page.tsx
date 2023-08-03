@@ -32,7 +32,7 @@ const Item: FC<{
 
 export default function Home() {
   return (
-    <Container className={`flex flex-col items-center md:flex-row md:gap-8`}>
+    <Container className={`flex items-center flex-row gap-8`}>
       <Item
         imgAlt="Avtoelektronika"
         imgSrc={avtoelektrikaImg}

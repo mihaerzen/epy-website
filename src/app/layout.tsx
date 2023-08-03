@@ -24,7 +24,7 @@ export default function RootLayout({
           <Image src={logo} alt="Avtolektrika" width={450} height={112}/>
         </Link>
 
-        <menu className="absolute bg-epj-red -bottom-11 flex gap-8 sm:bg-none sm:left-60 sm:bottom-4 items-center">
+        <menu className="absolute flex gap-8 bg-none left-60 bottom-4 items-center">
           <MenuItem href="/">
             Domov
           </MenuItem>

@@ -31,7 +31,7 @@ export default function Avtolektronika() {
         <Paragraph>Rešujemo in odpravljamo napake na vseh avtomobilskih znamkah.</Paragraph>
 
         <Heading3 id="najbolj_pogoste_napake">
-          <Hyperlink href="#najbolj_pogoste_napake">Najbolj pogoste napake</Hyperlink>
+          <Hyperlink href="#najbolj_pogoste_napake">NAJBOLJ POGOSTE NAPAKE</Hyperlink>
         </Heading3>
 
         <Heading4 id="Audi">

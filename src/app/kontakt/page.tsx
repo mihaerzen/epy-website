@@ -1,6 +1,12 @@
+import Image from "next/image";
 import {Container} from '@/components/Container'
 import {Heading1, Paragraph} from "@/components/Heading";
 import {Hyperlink} from "@/components/Hyperlink";
+
+import mapImage from './map.webp';
+import Link from "next/link";
+import {Vizitka} from "@/components/Vizitka";
+import {MAP_URL} from "@/constants";
 
 export default function Kontakt() {
   return <>
@@ -9,18 +15,14 @@ export default function Kontakt() {
         <Hyperlink href="/kontakt">KONTAKT</Hyperlink>
       </Heading1>
 
-      <Paragraph>
-        EPJ<br/>
-        Jože Perpar s.p.<br/>
-        Mleščevo 10a<br/>
-        1295 Ivančna Gorica<br/>
-        Tel.: <Hyperlink href="tel:+38640432000">040/432-000</Hyperlink>
-      </Paragraph>
+      <Vizitka/>
       <Paragraph>
         Lokacija: <Hyperlink target="_blank"
-                             href="https://maps.google.si/maps?ie=UTF8&cid=1681750800471515878&q=Epj+Jo%C5%BEe+Perpar+s.p.&iwloc=A&gl=SI&hl=en">EPJ
+                             href={MAP_URL}>EPJ
         Google Mapa</Hyperlink>
       </Paragraph>
+
+      <Link href={MAP_URL} target="_blank"><Image src={mapImage} alt="Map image" width={750} height={562}/></Link>
     </Container>
   </>
 }

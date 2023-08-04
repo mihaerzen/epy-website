@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="sl">
     <body
-      className={`${inter.className} min-w-[450px] text-white bg-black bg-[url(/back.jpg)] bg-no-repeat bg-fixed bg-[center_top] min-h-screen flex flex-col`}>
+      className={`${inter.className} min-w-[750px] text-white bg-black bg-[url(/back.jpg)] bg-no-repeat bg-fixed bg-[center_top] min-h-screen flex flex-col`}>
     <Navigation/>
 
     {children}

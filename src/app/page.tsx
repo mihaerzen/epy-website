@@ -7,7 +7,22 @@ import {FC} from "react";
 import {Container} from '@/components/Container'
 import {LINK_CLASS_NAME} from "@/constants";
 import {Vizitka} from "@/components/Vizitka";
+import { Metadata } from 'next';
 
+const title = 'EPJ, Jože Perpar s.p.';
+const description = 'Odpravljamo vse vrste napak v zvezi z avtomobilsko elektroniko.';
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: '/logo.png',
+    type: 'website',
+    title,
+    description,
+    url: 'https://avtoelektronika-epj.si',
+    siteName: title,
+  }
+}
 
 const Item: FC<{
   imgSrc: StaticImageData;

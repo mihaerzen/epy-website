@@ -1,6 +1,23 @@
 import {Container} from '@/components/Container'
 import {Heading1, Heading2, Heading3, Heading4, OList, OLitem, Paragraph, UList, ULitem} from "@/components/Heading";
 import {Hyperlink} from "@/components/Hyperlink";
+import { Metadata } from 'next';
+
+const title = 'Avtolektronika | EPJ, Jože Perpar s.p.';
+const description = 'Popravilo avtomobilske elektronike (avtoelektronike) je naša primarna dejavnost.';
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: '/logo.png',
+    type: 'website',
+    title,
+    description,
+    url: 'https://avtoelektronika-epj.si/avtoelektronika',
+    siteName: title,
+  }
+}
+
 export default function Avtolektronika() {
   return <>
     <Container>

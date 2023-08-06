@@ -1,7 +1,22 @@
 import {Container} from '@/components/Container'
 import {Heading1, Heading2, Paragraph} from "@/components/Heading";
 import {Hyperlink} from "@/components/Hyperlink";
+import { Metadata } from 'next';
 
+const title = 'Chip Tuning | EPJ, Jože Perpar s.p.';
+const description = 'Pri chip tuningu gre za nadgradnjo računalniškega sistema pri avtomobilu. Računalnik vzamemo iz avta, preberemo njegov program, ga modificiramo, nadgradimo in zapišemo nazaj.';
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    images: '/logo.png',
+    type: 'website',
+    title,
+    description,
+    url: 'https://avtoelektronika-epj.si/chip-tuning',
+    siteName: title,
+  }
+}
 export default function ChipTuning() {
   return <>
     <Container>

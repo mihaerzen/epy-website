@@ -10,8 +10,6 @@ import {useMediaQuery} from "@/hooks/useMediaQuery";
 import {usePathname, useRouter} from "next/navigation";
 import {ChangeEventHandler, useCallback, useMemo} from "react";
 
-import style from './Navigation.css';
-
 export const Navigation = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 750px)')
   const pathname = usePathname()
@@ -39,6 +37,8 @@ export const Navigation = () => {
     active: obj.href === pathname
   }))
 
+  const activeMenuItemText = menuItems.find(mi => mi.active)?.text || '';
+
   const handleChange = useCallback<ChangeEventHandler<HTMLSelectElement>>((e) => {
     router.push(e.target.value)
   }, [router])
@@ -51,7 +51,7 @@ export const Navigation = () => {
           isSmallDevice
             ?
             <div className="flex flex-row items-center h-[50px] justify-between">
-              <div className="flex items-center">
+              <div className="flex w-full items-center">
                 <div className="max-w-[50px]">
                   <Link href="/">
                     <Image src={logoSmall} alt="EPJ" width={207} height={57}/>
@@ -59,14 +59,18 @@ export const Navigation = () => {
                 </div>
               </div>
 
-              <select
-                className={`relative text-white bg-transparent z-20 text-right ${style.Select}`}
-                onChange={handleChange} value={pathname}>
-                {
-                  menuItems.map(({text, href, active}) => <option className="text-right" key={href}
-                                                                  value={href}>{text}</option>)
-                }
-              </select>
+              <div className="relative text-white text-right">
+                <div className="whitespace-nowrap">{activeMenuItemText}</div>
+
+                <select
+                  className={`absolute w-full right-0 top-0 text-white opacity-0 z-20`}
+                  onChange={handleChange} value={pathname}>
+                  {
+                    menuItems.map(({text, href, active}) => <option className="text-right" key={href}
+                                                                    value={href}>{text}</option>)
+                  }
+                </select>
+              </div>
             </div>
             :
             <div className="flex flex-row items-center gap-8 h-[100px]">

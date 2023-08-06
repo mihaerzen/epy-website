@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title,
   description,
   openGraph: {
-    images: '/logo.png',
+    images: 'https://avtoelektronika-epj.si/logo.png',
     type: 'website',
     title,
     description,

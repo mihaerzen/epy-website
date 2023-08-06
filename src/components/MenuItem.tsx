@@ -9,10 +9,8 @@ import {usePathname} from 'next/navigation'
 export const MenuItem: FC<PropsWithChildren<
   {
     href: string;
-  }>> = ({children, href}) => {
-  const pathname = usePathname()
-  const active = href !== '/' && pathname.startsWith(href)
-
+    active?: boolean;
+  }>> = ({children, href, active}) => {
   return (
     <li className={`${LINK_CLASS_NAME} ${active ? 'text-black' : 'text-white'} hover:text-black`}>
       <Link href={href}>

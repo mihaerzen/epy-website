@@ -16,11 +16,6 @@ export default function Kontakt() {
       </Heading1>
 
       <Vizitka/>
-      <Paragraph>
-        Lokacija: <Hyperlink target="_blank"
-                             href={MAP_URL}>EPJ
-        Google Mapa</Hyperlink>
-      </Paragraph>
 
       <Link href={MAP_URL} target="_blank"><Image src={mapImage} alt="Map image" width={750} height={562}/></Link>
     </Container>

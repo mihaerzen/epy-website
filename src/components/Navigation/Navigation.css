@@ -1,0 +1,13 @@
+.Select {
+    -webkit-appearance: none; /* turn off drop-down arrow*/
+    -moz-appearance: none;
+    direction: rtl;
+}
+
+.Select option {
+    direction: rtl;
+}
+
+.Select:active {
+    direction: ltr;
+}

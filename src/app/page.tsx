@@ -16,7 +16,7 @@ const Item: FC<{
   title: string;
   description: string;
 }> = ({imgSrc, imgAlt, href, title, description}) => {
-  return <div className="flex-1 w-full max-w-[400px] pb-8">
+  return <div className="flex-1 w-full pb-8">
     <Link href={href}><Image objectFit="cover" className="pb-4 w-full" src={imgSrc} alt={imgAlt} width={400}
                              height={300}/></Link>
     <h2 className={`pb-4 uppercase text-lg font-semibold text-epj-red hover:text-white ${LINK_CLASS_NAME}`}>
@@ -28,13 +28,12 @@ const Item: FC<{
   </div>
 }
 
-
 export default function Home() {
   return (
     <Container>
       <Vizitka/>
 
-      <div className="flex items-center flex-row gap-8">
+      <div className="flex items-center flex-col md:flex-row gap-8">
         <Item
           imgAlt="Avtoelektronika"
           imgSrc={avtoelektrikaImg}

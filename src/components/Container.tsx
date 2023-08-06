@@ -1,3 +1,4 @@
 import {FC, HTMLProps} from "react";
 
-export const Container: FC<HTMLProps<HTMLDivElement>> = ({className, ...props}) => <div className={`w-[750px] max-w-[830px] mx-auto ${className || ''}`} {...props}/>
+export const Container: FC<HTMLProps<HTMLDivElement>> = ({className, ...props}) => <div
+  className={`max-w-[830px] mx-auto px-2 md:px-0 ${className || ''}`} {...props}/>

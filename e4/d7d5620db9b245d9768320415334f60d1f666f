@@ -1,0 +1,23 @@
+src/components/Navigation/Navigation.tsx
+  s_4ae58ac5687755::t_585be248f0922f 47
+src/components/Footer/Footer.tsx
+  s_4ae58ac5687755::t_585be248f0922f 7
+src/app/page.tsx
+  s_4ae58ac5687755::t_585be248f0922f 34-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "e4d7d5620db9b245d9768320415334f60d1f666f",
+  "prompts": {},
+  "sessions": {
+    "s_4ae58ac5687755": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e72cf-1746-7f32-a614-ad9019fd6f96",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

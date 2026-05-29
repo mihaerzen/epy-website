@@ -1,22 +1,15 @@
 import {Container} from '@/components/Container'
 import {Heading1, Heading2, Paragraph} from "@/components/Heading";
 import {Hyperlink} from "@/components/Hyperlink";
-import { Metadata } from 'next';
+import {createMetadata} from "@/lib/seo";
 
-const title = 'Chip Tuning | EPJ, Jože Perpar s.p.';
-const description = 'Pri chip tuningu gre za nadgradnjo računalniškega sistema pri avtomobilu. Računalnik vzamemo iz avta, preberemo njegov program, ga modificiramo, nadgradimo in zapišemo nazaj.';
-export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: {
-    images: 'https://avtoelektronika-epj.si/logo.png',
-    type: 'website',
-    title,
-    description,
-    url: 'https://avtoelektronika-epj.si/chip-tuning',
-    siteName: title,
-  }
-}
+export const metadata = createMetadata({
+  title: 'Chip tuning in optimizacija motorne elektronike',
+  description:
+    'Chip tuning pri EPJ: optimizacija motorne elektronike za boljši navor, moč in porabo goriva.',
+  path: '/chip-tuning',
+});
+
 export default function ChipTuning() {
   return <>
     <Container>
@@ -30,7 +23,7 @@ export default function ChipTuning() {
           <Hyperlink href="#ZAKAJ">ZAKAJ?</Hyperlink>
         </Heading2>
 
-        <Paragraph>Najbolj pogost razlog za chip tuning je zmanjšanje porabe goriva pri dizelskih motorjih. Pri avtomobilih je zmanjšanje porabe povprečno 15% (1 do 1,5 litra na 100km). Poleg manjše orabe pa avto pridobi na sami moči motorja, kar daje občutek bolj prožne in živahne vožnje. Ker se na ta način poveča navor motorja, je prehitevanje veliko lažje in s tem ponavadi tudi bolj varno.</Paragraph>
+        <Paragraph>Najbolj pogost razlog za chip tuning je zmanjšanje porabe goriva pri dizelskih motorjih. Pri avtomobilih je zmanjšanje porabe povprečno 15% (1 do 1,5 litra na 100km). Poleg manjše porabe pa avto pridobi na sami moči motorja, kar daje občutek bolj prožne in živahne vožnje. Ker se na ta način poveča navor motorja, je prehitevanje veliko lažje in s tem ponavadi tudi bolj varno.</Paragraph>
     </Container>
   </>
 }

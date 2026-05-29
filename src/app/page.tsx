@@ -7,22 +7,17 @@ import {FC} from "react";
 import {Container} from '@/components/Container'
 import {LINK_CLASS_NAME} from "@/constants";
 import {Vizitka} from "@/components/Vizitka";
-import { Metadata } from 'next';
+import {Heading1, Heading2, Paragraph} from "@/components/Heading";
+import {PhoneCta} from "@/components/PhoneCta";
+import {ServiceLinks} from "@/components/ServiceLinks";
+import {createMetadata} from "@/lib/seo";
 
-const title = 'EPJ, Jože Perpar s.p.';
-const description = 'Odpravljamo vse vrste napak v zvezi z avtomobilsko elektroniko.';
-export const metadata: Metadata = {
-  title,
-  description,
-  openGraph: {
-    images: 'https://avtoelektronika-epj.si/logo.png',
-    type: 'website',
-    title,
-    description,
-    url: 'https://avtoelektronika-epj.si',
-    siteName: title,
-  }
-}
+export const metadata = createMetadata({
+  title: 'EPJ avtoelektrika Ivančna Gorica',
+  description:
+    'EPJ Ivančna Gorica: avtoelektrika, avtoelektronika, avtodiagnostika, popravilo avto elektrike, avtoradiev, ABS, airbag in ECU napak.',
+  path: '/',
+});
 
 const Item: FC<{
   imgSrc: StaticImageData;
@@ -45,16 +40,30 @@ const Item: FC<{
 
 export default function Home() {
   return (
-    <Container className="md:-mt-8 md:flex-1 md:flex md:flex-col md:justify-center">
+    <Container>
+      <Heading1>Avtoelektrika in avtoelektronika EPJ Ivančna Gorica</Heading1>
+
+      <Paragraph>
+        EPJ Jože Perpar s.p. odpravlja napake na avtoelektriki in avtoelektroniki: računalniška diagnostika
+        vozil, popravilo avto elektrike, popravilo avtomobilske elektronike, ABS in airbag sistemi, ECU moduli
+        ter popravilo in dekodiranje avtoradiev.
+      </Paragraph>
+
+      <Paragraph>
+        Delavnica je v Ivančni Gorici. Stranke prihajajo tudi iz Ivančne Gorice, Grosuplje, Višnja Gora,
+        Stična, Trebnje, Ljubljana okolica, Dolenjska in Osrednjeslovenska.
+      </Paragraph>
+
+      <PhoneCta/>
       <Vizitka/>
 
       <div className="flex items-center flex-col md:flex-row gap-8">
         <Item
           imgAlt="Avtoelektronika"
           imgSrc={avtoelektrikaImg}
-          href="/avtoelektronika"
-          title="Avtoelektronika"
-          description="Odpravljamo vse vrste napak v zvezi z avtomobilsko elektroniko."
+          href="/avtoelektrika"
+          title="Avtoelektrika"
+          description="Diagnostika in popravilo avtoelektrike, avtoelektronike, modulov, ABS, airbag in ECU napak."
         />
 
         <Item
@@ -65,6 +74,9 @@ export default function Home() {
           description="Zmanjšajte porabo goriva in hkrati povečajte moč motorja."
         />
       </div>
+
+      <Heading2>Storitve</Heading2>
+      <ServiceLinks currentHref="/"/>
     </Container>
   )
 }

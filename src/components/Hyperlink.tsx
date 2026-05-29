@@ -10,4 +10,4 @@ export interface HyperlinkProps {
 
 export const Hyperlink: FC<PropsWithChildren<HyperlinkProps>> = ({target, href , className = '', children}) => <Link
   className={`text-epj-red hover:text-white ${LINK_CLASS_NAME} ${className}`}
-  href={href} target={target}>{children}</Link>
+  href={href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined}>{children}</Link>

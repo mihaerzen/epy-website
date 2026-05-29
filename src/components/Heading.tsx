@@ -1,20 +1,20 @@
 import {FC, HTMLProps} from "react";
 
-export const Heading1: FC<HTMLProps<HTMLHeadingElement>> = ({className, ...props}) => <h1
-  className={`text-2xl text-epj-red font-bold mb-4 ${className || ''}`}
-  {...props}/>
+export const Heading1: FC<HTMLProps<HTMLHeadingElement>> = ({className, children, ...props}) => <h1
+  className={`pt-3 md:pt-4 text-2xl text-epj-red font-bold mb-4 ${className || ''}`}
+  {...props}>{children}</h1>
 
-export const Heading2: FC<HTMLProps<HTMLHeadingElement>> = ({className, ...props}) => <h2
+export const Heading2: FC<HTMLProps<HTMLHeadingElement>> = ({className, children, ...props}) => <h2
   className={`text-xl text-epj-red font-bold mb-4 ${className || ''}`}
-  {...props}/>
+  {...props}>{children}</h2>
 
-export const Heading3: FC<HTMLProps<HTMLHeadingElement>> = ({className, ...props}) => <h3
+export const Heading3: FC<HTMLProps<HTMLHeadingElement>> = ({className, children, ...props}) => <h3
   className={`text-epj-red mb-4 ${className || ''}`}
-  {...props}/>
+  {...props}>{children}</h3>
 
-export const Heading4: FC<HTMLProps<HTMLHeadingElement>> = ({className, ...props}) => <h4
+export const Heading4: FC<HTMLProps<HTMLHeadingElement>> = ({className, children, ...props}) => <h4
   className={`text-epj-red mb-1 ${className || ''}`}
-  {...props}/>
+  {...props}>{children}</h4>
 
 export const Paragraph: FC<HTMLProps<HTMLParagraphElement>> = ({className, ...props}) => <p
   className={`mb-4 ${className || ''}`}

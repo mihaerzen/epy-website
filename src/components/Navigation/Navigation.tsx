@@ -8,12 +8,19 @@ import Link from "next/link";
 import Image from "next/image";
 import {useMediaQuery} from "@/hooks/useMediaQuery";
 import {usePathname, useRouter} from "next/navigation";
-import {ChangeEventHandler, useCallback, useMemo} from "react";
+import {ChangeEventHandler, useCallback} from "react";
 
 export const Navigation = () => {
   const isSmallDevice = useMediaQuery('only screen and (max-width : 750px)')
   const pathname = usePathname()
-  const router = useRouter();
+  const {push} = useRouter();
+  const avtoelektrikaRoutes = [
+    '/avtoelektrika',
+    '/avtodiagnostika',
+    '/popravilo-avto-elektrike',
+    '/popravilo-avtoradia',
+    '/popravilo-avtomobilske-elektronike',
+  ];
 
   const menuItems: { text: string, href: string, active: boolean }[] = [
     {
@@ -25,8 +32,8 @@ export const Navigation = () => {
       href: '/kontakt',
     },
     {
-      text: 'AVTOELEKTRONIKA',
-      href: '/avtoelektronika',
+      text: 'AVTOELEKTRIKA',
+      href: '/avtoelektrika',
     },
     {
       text: 'CHIP TUNING',
@@ -34,14 +41,15 @@ export const Navigation = () => {
     },
   ].map((obj) => ({
     ...obj,
-    active: obj.href === pathname
+    active: obj.href === pathname || (obj.href === '/avtoelektrika' && avtoelektrikaRoutes.includes(pathname))
   }))
 
-  const activeMenuItemText = menuItems.find(mi => mi.active)?.text || '';
+  const activeMenuItem = menuItems.find(mi => mi.active);
+  const activeMenuItemText = activeMenuItem?.text || '';
 
-  const handleChange = useCallback<ChangeEventHandler<HTMLSelectElement>>((e) => {
-    router.push(e.target.value)
-  }, [router])
+  const navigateFromMobileMenu = useCallback<ChangeEventHandler<HTMLSelectElement>>((e) => {
+    push(e.target.value)
+  }, [push])
 
   return (
     <nav className="bg-epj-red mb-8 md:mb-8">
@@ -64,10 +72,10 @@ export const Navigation = () => {
 
                 <select
                   className={`absolute w-full right-0 top-0 text-white opacity-0 z-20`}
-                  onChange={handleChange} value={pathname}>
+                  onChange={navigateFromMobileMenu} value={activeMenuItem?.href || pathname}>
                   {
-                    menuItems.map(({text, href, active}) => <option className="text-right" key={href}
-                                                                    value={href}>{text}</option>)
+                    menuItems.map(({text, href}) => <option className="text-right" key={href}
+                                                            value={href}>{text}</option>)
                   }
                 </select>
               </div>

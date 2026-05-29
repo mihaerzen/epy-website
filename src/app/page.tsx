@@ -45,7 +45,7 @@ const Item: FC<{
 
 export default function Home() {
   return (
-    <Container>
+    <Container className="md:-mt-8 md:flex-1 md:flex md:flex-col md:justify-center">
       <Vizitka/>
 
       <div className="flex items-center flex-col md:flex-row gap-8">

@@ -1,0 +1,32 @@
+src/app/globals.css
+  s_7347280cd13f56::t_d544d964220e2e 1-5
+tsconfig.json
+  s_7347280cd13f56::t_ce0697a9a41911 4-8,16,19,27-29,32-41
+src/app/kontakt/page.tsx
+  s_7347280cd13f56::t_67823c6965a141 36
+src/app/page.tsx
+  s_7347280cd13f56::t_fd06e8181521d1 35
+pnpm-workspace.yaml
+  s_7347280cd13f56::t_f86c5034d9d5ba 2
+package.json
+  s_7347280cd13f56::t_362d7a2c617680 12
+  s_7347280cd13f56::t_d544d964220e2e 5-8,15-25
+postcss.config.mjs
+  s_7347280cd13f56::t_d544d964220e2e 1,3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "f2740f96b4cc4efa19fedbad4ff420c4a29f3b9c",
+  "prompts": {},
+  "sessions": {
+    "s_7347280cd13f56": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e72a9-b25e-7fd1-a5ec-f98997a2a327",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

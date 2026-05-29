@@ -74,3 +74,25 @@ test('page headings have shared top spacing', () => {
   assert.match(heading, /pt-3 md:pt-4/, 'shared Heading1 should add top padding on every page');
   assert.doesNotMatch(home, /<Heading1 className=/, 'homepage should use the shared Heading1 spacing without page-specific padding');
 });
+
+test('homepage LCP image and critical path assets are optimized', () => {
+  const home = read('src/app/page.tsx');
+  const layout = read('src/app/layout.tsx');
+  const globals = read('src/app/globals.css');
+  const nextConfig = read('next.config.js');
+  const packageJson = read('package.json');
+  const tsconfig = read('tsconfig.json');
+
+  assert.match(home, /preload=\{true\}/, 'homepage LCP image should be preloaded');
+  assert.match(home, /fetchPriority=["']high["']/, 'homepage LCP image should request high fetch priority');
+  assert.match(home, /quality=\{60\}/, 'homepage card images should use optimized quality');
+  assert.match(home, /cardImageSizes = ["']\(min-width: 768px\) 399px, calc\(100vw - 16px\)["']/, 'homepage card images should define responsive sizes');
+  assert.match(home, /sizes=\{cardImageSizes\}/, 'homepage card images should use the shared responsive sizes');
+  assert.doesNotMatch(home, /loading=["']lazy["']/, 'homepage LCP image should not be explicitly lazy loaded');
+
+  assert.match(nextConfig, /qualities:\s*\[\s*60,\s*75\s*\]/, 'Next image config should allow optimized q=60 URLs and existing q=75 URLs');
+  assert.doesNotMatch(layout, /next\/font\/google/, 'root layout should not load Google font assets into the critical path');
+  assert.match(globals, /font-family:\s*system-ui/, 'global CSS should use a system font stack');
+  assert.match(packageJson, /"browserslist"/, 'package should define modern browser targets');
+  assert.match(tsconfig, /"target":\s*"es2022"/, 'TypeScript output target should be modernized');
+});

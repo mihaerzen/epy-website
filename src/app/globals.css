@@ -3,3 +3,7 @@
 @theme {
   --color-epj-red: #a70e13;
 }
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}

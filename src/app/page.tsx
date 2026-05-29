@@ -1,4 +1,4 @@
-import Image, {StaticImageData} from 'next/image'
+import Image, {type ImageProps, type StaticImageData} from 'next/image'
 
 import avtoelektrikaImg from "./avtoelektrika_1.jpg"
 import chipTuningImg from "./chipTuning_1.jpg"
@@ -19,16 +19,23 @@ export const metadata = createMetadata({
   path: '/',
 });
 
-const Item: FC<{
+const cardImageSizes = "(min-width: 768px) 399px, calc(100vw - 16px)";
+
+type ItemImageProps = Pick<ImageProps, 'preload' | 'fetchPriority' | 'loading' | 'quality' | 'sizes'>;
+
+type ItemProps = {
   imgSrc: StaticImageData;
   imgAlt: string;
   href: string;
   title: string;
   description: string;
-}> = ({imgSrc, imgAlt, href, title, description}) => {
+} & ItemImageProps;
+
+const Item: FC<ItemProps> = ({imgSrc, imgAlt, href, title, description, preload, fetchPriority, loading, quality, sizes}) => {
   return <div className="flex-1 w-full pb-8 md:pb-2">
     <Link href={href}><Image className="pb-4 w-full object-cover md:h-[180px]" src={imgSrc} alt={imgAlt} width={400}
-                             height={300}/></Link>
+                             height={300} preload={preload} fetchPriority={fetchPriority} loading={loading}
+                             quality={quality} sizes={sizes}/></Link>
     <h2 className={`pb-4 uppercase text-lg font-semibold text-epj-red hover:text-white ${LINK_CLASS_NAME}`}>
       <Link href={href}>{title}</Link>
     </h2>
@@ -64,6 +71,10 @@ export default function Home() {
           href="/avtoelektrika"
           title="Avtoelektrika"
           description="Diagnostika in popravilo avtoelektrike, avtoelektronike, modulov, ABS, airbag in ECU napak."
+          preload={true}
+          fetchPriority="high"
+          quality={60}
+          sizes={cardImageSizes}
         />
 
         <Item
@@ -72,6 +83,8 @@ export default function Home() {
           href="/chip-tuning"
           title="Chip Tuning"
           description="Zmanjšajte porabo goriva in hkrati povečajte moč motorja."
+          quality={60}
+          sizes={cardImageSizes}
         />
       </div>
 

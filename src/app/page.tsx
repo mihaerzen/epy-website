@@ -57,8 +57,8 @@ export default function Home() {
       </Paragraph>
 
       <Paragraph>
-        Delavnica je v Ivančni Gorici. Stranke prihajajo tudi iz Ivančne Gorice, Grosuplje, Višnja Gora,
-        Stična, Trebnje, Ljubljana okolica, Dolenjska in Osrednjeslovenska.
+        Delavnica je v Ivančni Gorici. Stranke prihajajo iz Ivančne Gorice, Grosuplja, Višnje Gore, Stične,
+        Trebnjega, Ljubljane in okolice, Dolenjske in Osrednjeslovenske.
       </Paragraph>
 
       <PhoneCta/>

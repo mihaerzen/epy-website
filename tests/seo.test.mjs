@@ -46,7 +46,7 @@ test('core SEO implementation covers local service intent', () => {
 
   assert.ok(
     home.replace(/\s+/g, ' ').includes(
-      'Stranke prihajajo tudi iz Ivančne Gorice, Grosuplje, Višnja Gora, Stična, Trebnje, Ljubljana okolica, Dolenjska in Osrednjeslovenska.',
+      'Stranke prihajajo iz Ivančne Gorice, Grosuplja, Višnje Gore, Stične, Trebnjega, Ljubljane in okolice, Dolenjske in Osrednjeslovenske.',
     ),
     'homepage should use the approved local service-area sentence',
   );

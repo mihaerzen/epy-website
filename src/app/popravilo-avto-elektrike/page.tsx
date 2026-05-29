@@ -3,18 +3,23 @@ import {Heading1, Heading2, Paragraph, UList, ULitem} from "@/components/Heading
 import {Hyperlink} from "@/components/Hyperlink";
 import {PhoneCta} from "@/components/PhoneCta";
 import {ServiceLinks} from "@/components/ServiceLinks";
-import {createMetadata} from "@/lib/seo";
+import {JsonLd} from "@/components/JsonLd";
+import {breadcrumbJsonLd, createMetadata, servicePageJsonLd} from "@/lib/seo";
+
+const PATH = '/popravilo-avto-elektrike';
 
 export const metadata = createMetadata({
   title: 'Popravilo avto elektrike in avtoelektrike',
   description:
     'Popravilo avto elektrike pri EPJ: napeljava, luči, zaganjač, alternator, akumulator, centralno zaklepanje, električni pomik stekel in senzorji.',
-  path: '/popravilo-avto-elektrike',
+  path: PATH,
 });
 
 export default function PopraviloAvtoElektrike() {
   return (
     <Container>
+      <JsonLd data={servicePageJsonLd(PATH)}/>
+      <JsonLd data={breadcrumbJsonLd(PATH)}/>
       <Heading1>Popravilo avto elektrike in avtoelektrike</Heading1>
 
       <Paragraph>

@@ -1,18 +1,23 @@
 import {Container} from '@/components/Container'
 import {Heading1, Heading2, Paragraph} from "@/components/Heading";
 import {Hyperlink} from "@/components/Hyperlink";
-import {createMetadata} from "@/lib/seo";
+import {JsonLd} from "@/components/JsonLd";
+import {breadcrumbJsonLd, createMetadata, servicePageJsonLd} from "@/lib/seo";
+
+const PATH = '/chip-tuning';
 
 export const metadata = createMetadata({
   title: 'Chip tuning in optimizacija motorne elektronike',
   description:
     'Chip tuning pri EPJ: optimizacija motorne elektronike za boljši navor, moč in porabo goriva.',
-  path: '/chip-tuning',
+  path: PATH,
 });
 
 export default function ChipTuning() {
   return <>
     <Container>
+        <JsonLd data={servicePageJsonLd(PATH)}/>
+        <JsonLd data={breadcrumbJsonLd(PATH)}/>
         <Heading1>
           <Hyperlink href="/chip-tuning">CHIP TUNING</Hyperlink>
         </Heading1>

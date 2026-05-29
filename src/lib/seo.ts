@@ -8,6 +8,12 @@ export const PHONE_E164 = '+38640432000';
 export const STREET_ADDRESS = 'Mleščevo 10a';
 export const POSTAL_CODE = '1295';
 export const ADDRESS_LOCALITY = 'Ivančna Gorica';
+// Approximate coordinates for Mleščevo 10a, 1295 Ivančna Gorica. Verify against the GBP map pin.
+export const GEO_LATITUDE = 45.9357;
+export const GEO_LONGITUDE = 14.8048;
+export const OPENING_HOURS_DISPLAY = 'Pon–Pet: 08:00–16:00';
+// Canonical Google Maps Place URL (CID), preferred for schema sameAs over the localized search URL.
+export const GOOGLE_MAPS_PLACE_URL = 'https://www.google.com/maps?cid=1681750800471515878';
 
 export const SERVICE_AREA = [
   'Ivančna Gorica',
@@ -91,20 +97,13 @@ export const createMetadata = ({
     description,
     url: getAbsoluteUrl(path),
     siteName: BUSINESS_NAME,
-    images: [
-      {
-        url: `${SITE_URL}/logo.png`,
-        width: 450,
-        height: 112,
-        alt: BUSINESS_NAME,
-      },
-    ],
+    // og:image is supplied by the app/opengraph-image route (1200x630).
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
-    images: [`${SITE_URL}/logo.png`],
+    // twitter:image falls back to the opengraph-image route.
   },
 });
 
@@ -127,6 +126,17 @@ export const localBusinessJsonLd = {
     addressLocality: ADDRESS_LOCALITY,
     addressCountry: 'SI',
   },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: GEO_LATITUDE,
+    longitude: GEO_LONGITUDE,
+  },
+  founder: {
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#joze-perpar`,
+    name: 'Jože Perpar',
+    jobTitle: 'Avtoelektričar',
+  },
   areaServed: SERVICE_AREA.map((name) => ({
     '@type': 'AdministrativeArea',
     name,
@@ -139,9 +149,7 @@ export const localBusinessJsonLd = {
       closes: '16:00',
     },
   ],
-  sameAs: [
-    'https://maps.google.si/maps?ie=UTF8&cid=1681750800471515878&q=Epj+Jo%C5%BEe+Perpar+s.p.&iwloc=A&gl=SI&hl=en',
-  ],
+  sameAs: [GOOGLE_MAPS_PLACE_URL],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     name: 'Storitve avtoelektrike in avtoelektronike',
@@ -155,4 +163,60 @@ export const localBusinessJsonLd = {
       },
     })),
   },
+};
+
+// Per-page Service schema, linked to the global AutoRepair entity via @id.
+export const servicePageJsonLd = (href: string) => {
+  const service = services.find((s) => s.href === href);
+  if (!service) return null;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${getAbsoluteUrl(href)}#service`,
+    name: service.title,
+    description: service.description,
+    url: getAbsoluteUrl(href),
+    serviceType: service.title,
+    provider: {
+      '@type': 'AutoRepair',
+      '@id': `${SITE_URL}/#epj`,
+    },
+    areaServed: SERVICE_AREA.map((name) => ({
+      '@type': 'AdministrativeArea',
+      name,
+    })),
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      servicePhone: {
+        '@type': 'ContactPoint',
+        telephone: PHONE_E164,
+        contactType: 'customer service',
+        availableLanguage: 'Slovenian',
+      },
+    },
+  };
+};
+
+export const breadcrumbJsonLd = (href: string) => {
+  const service = services.find((s) => s.href === href);
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Domov',
+        item: getAbsoluteUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: service?.title ?? href,
+        item: getAbsoluteUrl(href),
+      },
+    ],
+  };
 };

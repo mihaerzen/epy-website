@@ -3,18 +3,23 @@ import {Heading1, Heading2, Paragraph, UList, ULitem} from "@/components/Heading
 import {Hyperlink} from "@/components/Hyperlink";
 import {PhoneCta} from "@/components/PhoneCta";
 import {ServiceLinks} from "@/components/ServiceLinks";
-import {createMetadata} from "@/lib/seo";
+import {JsonLd} from "@/components/JsonLd";
+import {breadcrumbJsonLd, createMetadata, servicePageJsonLd} from "@/lib/seo";
+
+const PATH = '/avtodiagnostika';
 
 export const metadata = createMetadata({
   title: 'Avtodiagnostika in računalniška diagnostika vozil',
   description:
     'Avtodiagnostika EPJ v Ivančni Gorici: računalniška diagnostika vozil, branje in brisanje napak, motorna lučka, ABS, airbag in ECU.',
-  path: '/avtodiagnostika',
+  path: PATH,
 });
 
 export default function Avtodiagnostika() {
   return (
     <Container>
+      <JsonLd data={servicePageJsonLd(PATH)}/>
+      <JsonLd data={breadcrumbJsonLd(PATH)}/>
       <Heading1>Avtodiagnostika in računalniška diagnostika vozil</Heading1>
 
       <Paragraph>

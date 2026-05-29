@@ -3,18 +3,23 @@ import {Heading1, Heading2, Heading3, Paragraph, UList, ULitem} from "@/componen
 import {Hyperlink} from "@/components/Hyperlink";
 import {PhoneCta} from "@/components/PhoneCta";
 import {ServiceLinks} from "@/components/ServiceLinks";
-import {createMetadata, SERVICE_AREA} from "@/lib/seo";
+import {JsonLd} from "@/components/JsonLd";
+import {breadcrumbJsonLd, createMetadata, servicePageJsonLd, SERVICE_AREA} from "@/lib/seo";
+
+const PATH = '/avtoelektrika';
 
 export const metadata = createMetadata({
   title: 'Avtoelektrika in avtoelektronika | EPJ Ivančna Gorica',
   description:
     'Avtoelektrika in avtoelektronika EPJ: diagnostika, popravilo avto elektrike, avtoradiev, ABS, airbag in ECU napak v Ivančni Gorici.',
-  path: '/avtoelektrika',
+  path: PATH,
 });
 
 export default function Avtoelektrika() {
   return (
     <Container>
+      <JsonLd data={servicePageJsonLd(PATH)}/>
+      <JsonLd data={breadcrumbJsonLd(PATH)}/>
       <Heading1>Avtoelektrika in avtoelektronika | EPJ Ivančna Gorica</Heading1>
 
       <Paragraph>

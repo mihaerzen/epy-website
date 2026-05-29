@@ -21,20 +21,13 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: BUSINESS_NAME,
-    images: [
-      {
-        url: `${SITE_URL}/logo.png`,
-        width: 450,
-        height: 112,
-        alt: BUSINESS_NAME,
-      },
-    ],
+    // og:image is supplied by the app/opengraph-image route (1200x630).
   },
   twitter: {
     card: 'summary_large_image',
     title: `${BUSINESS_NAME} | Avtoelektrika Ivančna Gorica`,
     description: SITE_DESCRIPTION,
-    images: [`${SITE_URL}/logo.png`],
+    // twitter:image falls back to the opengraph-image route.
   },
 };
 

@@ -3,18 +3,23 @@ import {Heading1, Heading2, Paragraph, UList, ULitem} from "@/components/Heading
 import {Hyperlink} from "@/components/Hyperlink";
 import {PhoneCta} from "@/components/PhoneCta";
 import {ServiceLinks} from "@/components/ServiceLinks";
-import {createMetadata} from "@/lib/seo";
+import {JsonLd} from "@/components/JsonLd";
+import {breadcrumbJsonLd, createMetadata, servicePageJsonLd} from "@/lib/seo";
+
+const PATH = '/popravilo-avtomobilske-elektronike';
 
 export const metadata = createMetadata({
   title: 'Popravilo avtomobilske elektronike, ECU, ABS in airbag',
   description:
     'Popravilo avtomobilske elektronike pri EPJ: ECU, ABS, airbag, moduli, računalniki vozila in elektronske napake v Ivančni Gorici.',
-  path: '/popravilo-avtomobilske-elektronike',
+  path: PATH,
 });
 
 export default function PopraviloAvtomobilskeElektronike() {
   return (
     <Container>
+      <JsonLd data={servicePageJsonLd(PATH)}/>
+      <JsonLd data={breadcrumbJsonLd(PATH)}/>
       <Heading1>Popravilo avtomobilske elektronike, ECU, ABS in airbag</Heading1>
 
       <Paragraph>

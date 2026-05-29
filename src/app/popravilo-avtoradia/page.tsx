@@ -3,18 +3,23 @@ import {Heading1, Heading2, Paragraph, UList, ULitem} from "@/components/Heading
 import {Hyperlink} from "@/components/Hyperlink";
 import {PhoneCta} from "@/components/PhoneCta";
 import {ServiceLinks} from "@/components/ServiceLinks";
-import {createMetadata} from "@/lib/seo";
+import {JsonLd} from "@/components/JsonLd";
+import {breadcrumbJsonLd, createMetadata, servicePageJsonLd} from "@/lib/seo";
+
+const PATH = '/popravilo-avtoradia';
 
 export const metadata = createMetadata({
   title: 'Popravilo avtoradia in dekodiranje avtoradia',
   description:
     'Popravilo avtoradia, dekodiranje avtoradia, navigacij in multimedijskih enot pri EPJ v Ivančni Gorici.',
-  path: '/popravilo-avtoradia',
+  path: PATH,
 });
 
 export default function PopraviloAvtoradia() {
   return (
     <Container>
+      <JsonLd data={servicePageJsonLd(PATH)}/>
+      <JsonLd data={breadcrumbJsonLd(PATH)}/>
       <Heading1>Popravilo avtoradia in dekodiranje avtoradia</Heading1>
 
       <Paragraph>

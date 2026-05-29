@@ -1,0 +1,75 @@
+src/components/Hyperlink.tsx
+  s_76607d07d088de::t_45d0cd05b5d048 13
+src/components/Footer/Footer.tsx
+  s_76607d07d088de::t_205a9137837671 5-6,14-15,17-26
+  s_76607d07d088de::t_af1e52e1c12958 16
+src/components/PhoneCta.tsx
+  s_76607d07d088de::t_a7aab793f10e63 2-5,8-10,12-13
+  s_76607d07d088de::t_a8b746eccfcdad 1,6-7,11
+package.json
+  s_76607d07d088de::t_61bfaad139fc2c 11
+src/lib/seo.ts
+  s_76607d07d088de::t_a12f11f4f46902 1-111,115-158
+  s_76607d07d088de::t_b2d34a10942554 112-114
+src/app/popravilo-avtomobilske-elektronike/page.tsx
+  s_76607d07d088de::t_272e201f1d24b2 1-62
+src/app/kontakt/page.tsx
+  s_76607d07d088de::t_fa4b15d1912c46 10,12-16
+src/app/popravilo-avto-elektrike/page.tsx
+  s_76607d07d088de::t_272e201f1d24b2 1-63
+tests/seo.test.mjs
+  s_76607d07d088de::t_61bfaad139fc2c 1-45,53-66,68
+  s_76607d07d088de::t_ccbb8164a8b6f7 69-76
+  s_76607d07d088de::t_0fb3311c6398be 67
+  s_76607d07d088de::t_1f2f68d683b17b 47-50
+  s_76607d07d088de::t_2c53d1d00fdad1 46,51-52
+src/app/avtodiagnostika/page.tsx
+  s_76607d07d088de::t_272e201f1d24b2 1-57
+src/app/robots.ts
+  s_76607d07d088de::t_7a3ededf1d3e8a 1-13
+src/app/page.tsx
+  s_76607d07d088de::t_f256b3d7924d3e 13,53-54
+  s_76607d07d088de::t_7e80a12b8049ed 44
+  s_76607d07d088de::t_c8b2aab97106ac 10-12,15-20,43,45-52,55-57,64-66,77-79
+src/app/layout.tsx
+  s_76607d07d088de::t_28e37d07a59772 2,6,10-43
+  s_76607d07d088de::t_59a19a429b395a 53
+src/app/popravilo-avtoradia/page.tsx
+  s_76607d07d088de::t_272e201f1d24b2 1-57
+next.config.js
+  s_76607d07d088de::t_90a5b41dd05e97 2-7,9-12
+  s_76607d07d088de::t_0fb3311c6398be 8
+src/components/Navigation/Navigation.tsx
+  s_76607d07d088de::t_59a19a429b395a 16,50-52,75
+  s_76607d07d088de::t_75c5c387865a40 11,77-78
+  s_76607d07d088de::t_19e7df8738e62c 17-23,44
+  s_76607d07d088de::t_e5ca762246a5af 35-36
+  s_76607d07d088de::t_b484f49dd5a543 47-48
+src/app/chip-tuning/page.tsx
+  s_76607d07d088de::t_faa85cdb231216 4-11,26
+src/app/sitemap.ts
+  s_76607d07d088de::t_7a3ededf1d3e8a 1-21
+src/components/Heading.tsx
+  s_76607d07d088de::t_ed2e3aef72d70c 3,5,7,9,11,13,15,17
+  s_76607d07d088de::t_7e80a12b8049ed 4
+src/components/ServiceLinks.tsx
+  s_76607d07d088de::t_a7aab793f10e63 1-20
+src/app/avtoelektrika/page.tsx
+  s_76607d07d088de::t_6f7b6c619c2efd 2,4-16,18-97,99
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "6466ef7b839306161aed296e426b515ea1a9efc0",
+  "prompts": {},
+  "sessions": {
+    "s_76607d07d088de": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e72d0-c329-7bf1-a37e-051066799052",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

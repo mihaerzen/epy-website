@@ -1,0 +1,19 @@
+pnpm-workspace.yaml
+  s_7347280cd13f56::t_a5b67b974b582c 1-3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "5bb2faa0357b20150580e7d3026660cbdf6a8281",
+  "prompts": {},
+  "sessions": {
+    "s_7347280cd13f56": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019e72a9-b25e-7fd1-a5ec-f98997a2a327",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

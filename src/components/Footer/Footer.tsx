@@ -4,7 +4,7 @@ import bottomGraphics from "@/components/Footer/bottomGraphics.png";
 import Link from "next/link";
 
 export const Footer = () => (
-  <footer className="mt-auto pt-10">
+  <footer className="mt-auto pt-10 md:pt-4">
       <Container>
         <Image src={bottomGraphics} alt="bottom graphics"/>
       </Container>

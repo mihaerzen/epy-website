@@ -44,7 +44,7 @@ export const Navigation = () => {
   }, [router])
 
   return (
-    <nav className="bg-epj-red mb-8 md:mb-16">
+    <nav className="bg-epj-red mb-8 md:mb-8">
       <Container
         className="relative">
         {

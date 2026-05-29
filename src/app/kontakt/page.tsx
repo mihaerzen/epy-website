@@ -33,7 +33,7 @@ export default function Kontakt() {
 
       <Vizitka/>
 
-      <Link href={MAP_URL} target="_blank"><Image src={mapImage} alt="Map image" width={750} height={562}/></Link>
+      <Link href={MAP_URL} target="_blank"><Image style={{width: '100%', maxWidth: 750, height: 'auto'}} src={mapImage} alt="Map image"/></Link>
     </Container>
   </>
 }

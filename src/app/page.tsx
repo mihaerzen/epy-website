@@ -32,7 +32,7 @@ const Item: FC<{
   description: string;
 }> = ({imgSrc, imgAlt, href, title, description}) => {
   return <div className="flex-1 w-full pb-8">
-    <Link href={href}><Image objectFit="cover" className="pb-4 w-full" src={imgSrc} alt={imgAlt} width={400}
+    <Link href={href}><Image className="pb-4 w-full object-cover" src={imgSrc} alt={imgAlt} width={400}
                              height={300}/></Link>
     <h2 className={`pb-4 uppercase text-lg font-semibold text-epj-red hover:text-white ${LINK_CLASS_NAME}`}>
       <Link href={href}>{title}</Link>

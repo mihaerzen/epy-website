@@ -1,0 +1,49 @@
+src/app/popravilo-avto-elektrike/page.tsx
+  s_58ff11007200f6::t_40fba4a58f26cc 6-9,15,21-22
+src/components/Navigation/Navigation.tsx
+  s_58ff11007200f6::t_d2ad497b16df54 52-53,56-62,64-65,67-72,75-99
+src/app/popravilo-avtomobilske-elektronike/page.tsx
+  s_58ff11007200f6::t_e6fa8db200e8ea 6-9,15,21-22
+src/app/popravilo-avtoradia/page.tsx
+  s_58ff11007200f6::t_ba69ef0d7c91bb 6-9,15,21-22
+src/app/chip-tuning/page.tsx
+  s_58ff11007200f6::t_4493bf5d7b9f7e 4-7,13,19-20
+next.config.js
+  s_58ff11007200f6::t_1b8fe44f302a42 15-45
+src/components/JsonLd.tsx
+  s_58ff11007200f6::t_79a04730fe536b 1-10
+src/app/kontakt/page.tsx
+  s_58ff11007200f6::t_b12dcac2a19c68 10-13,18,24
+src/app/opengraph-image.tsx
+  s_58ff11007200f6::t_4db353d0d23bba 1-35
+src/components/Vizitka.tsx
+  s_58ff11007200f6::t_fd0801a053bb1d 4,11-12
+src/lib/seo.ts
+  s_58ff11007200f6::t_0bce37186c8e94 100,106
+  s_58ff11007200f6::t_cd85ca9224e4c9 129-139
+  s_58ff11007200f6::t_2f5fbf829f2441 11-16
+  s_58ff11007200f6::t_facd6b3e65de28 167-222
+  s_58ff11007200f6::t_ab01063b4ff26c 152
+src/app/avtoelektrika/page.tsx
+  s_58ff11007200f6::t_377799b28d0425 6-9,15,21-22
+src/app/layout.tsx
+  s_58ff11007200f6::t_f5a246ba35f09f 24,30
+src/app/avtodiagnostika/page.tsx
+  s_58ff11007200f6::t_0df0b30f6b331a 6-9,15,21-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "e4bd6efb8364ba58ef39d0ddd3b1f9bea2223f28",
+  "prompts": {},
+  "sessions": {
+    "s_58ff11007200f6": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "321fedee-c6b3-436f-b6ad-f8d0847329d7",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

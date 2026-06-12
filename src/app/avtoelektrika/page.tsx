@@ -59,6 +59,12 @@ export default function Avtoelektrika() {
         avtoradiu, ECU modulu ali drugem delu avtomobilske elektronike.
       </Paragraph>
 
+      <Paragraph>
+        Vozniki pogosto iščejo izraze avto elektronika, popravilo avto elektronike ali električna napaka,
+        ko se težava pokaže samo občasno. Pri takih napakah preverimo tudi, ali je vzrok v slabem kontaktu,
+        poškodovani napeljavi, vlagi, prekinjeni masi ali komunikaciji med kontrolnimi enotami.
+      </Paragraph>
+
       <Heading2 id="pogoste-napake">
         <Hyperlink href="#pogoste-napake">Pogoste napake, ki jih rešujemo</Hyperlink>
       </Heading2>
@@ -71,6 +77,7 @@ export default function Avtoelektrika() {
             <ULitem>motor težko vžge topel ali hladen</ULitem>
             <ULitem>motor cuka, se ugaša ali izgublja moč</ULitem>
             <ULitem>motorna lučka sveti ali utripa</ULitem>
+            <ULitem>ECU napaka, težava s senzorjem ali komunikacijo motornega računalnika</ULitem>
           </UList>
         </section>
 
@@ -79,11 +86,22 @@ export default function Avtoelektrika() {
           <UList>
             <ULitem>ABS lučka sveti ali sistem ne deluje pravilno</ULitem>
             <ULitem>airbag lučka sveti po napaki ali posegu</ULitem>
+            <ULitem>ABS lučka ali airbag lučka se vrne po brisanju napake</ULitem>
             <ULitem>centralno zaklepanje, luči ali pomik stekel ne delujejo</ULitem>
             <ULitem>avtoradio, navigacija ali multimedijska enota se ne odziva</ULitem>
           </UList>
         </section>
       </div>
+
+      <Heading2 id="kaj-povedati-ob-klicu">
+        <Hyperlink href="#kaj-povedati-ob-klicu">Kaj povedati ob klicu</Hyperlink>
+      </Heading2>
+
+      <Paragraph>
+        Za hitrejši dogovor povejte znamko in model vozila, letnik, katera opozorilna lučka sveti,
+        ali je napaka stalna ali občasna in ali je bil akumulator, avtoradio ali elektronski modul
+        pred kratkim odklopljen oziroma zamenjan.
+      </Paragraph>
 
       <Heading2 id="lokacija">
         <Hyperlink href="#lokacija">Lokalno območje</Hyperlink>
@@ -91,8 +109,9 @@ export default function Avtoelektrika() {
 
       <Paragraph>
         Storitev iščejo vozniki z izrazi, kot so avtoelektričar Ivančna Gorica, popravilo avtoelektrike
-        Grosuplje, avtoelektronika Ljubljana okolica ali popravilo avto radia Dolenjska. EPJ je primeren
-        za stranke iz območij: {SERVICE_AREA.join(', ')}.
+        Grosuplje, avtoelektričar Ivančna Gorica, avto elektronika Ljubljana okolica, avtoelektronika
+        Ljubljana okolica ali popravilo avto radia Dolenjska. EPJ je primeren za stranke iz območij:
+        {SERVICE_AREA.join(', ')}.
       </Paragraph>
 
       <Heading2 id="povezane-storitve">

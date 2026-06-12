@@ -164,3 +164,50 @@ test('Content Security Policy allows consent-denied Google Analytics requests', 
     'CSP should allow image-pixel GA4 fallbacks',
   );
 });
+
+test('contact page is optimized for local EPJ avtoelektrika intent', () => {
+  const contact = read('src/app/kontakt/page.tsx');
+
+  [
+    'Kontakt EPJ Jože Perpar s.p. | Avtoelektrika Ivančna Gorica',
+    'avtoelektrika in avtoelektronika',
+    'Mleščevo 10a',
+    '040/432-000',
+    'delavnica za avtoelektriko',
+    'računalniško diagnostiko',
+    'Ivančna Gorica',
+  ].forEach((term) => assert.match(contact, new RegExp(term, 'i'), `${term} should be present on contact page`));
+
+  assert.doesNotMatch(contact, /<Hyperlink href="\/kontakt">KONTAKT<\/Hyperlink>/, 'contact H1 should not be generic');
+});
+
+test('chip tuning page answers local service and safety intent', () => {
+  const chipTuning = read('src/app/chip-tuning/page.tsx');
+
+  [
+    'Chip tuning in optimizacija motorne elektronike',
+    'diagnostika pred posegom',
+    'navor',
+    'porabo goriva',
+    'primeren poseg',
+    'Ivančna Gorica',
+    'Grosuplje',
+    'Ljubljana',
+    'Povezane storitve',
+  ].forEach((term) => assert.match(chipTuning, new RegExp(term, 'i'), `${term} should be present on chip tuning page`));
+});
+
+test('avtoelektrika page targets exact service symptoms and local terms', () => {
+  const avtoelektrika = read('src/app/avtoelektrika/page.tsx');
+
+  [
+    'avtoelektričar Ivančna Gorica',
+    'avto elektronika',
+    'popravilo avto elektronike',
+    'ABS lučka',
+    'airbag lučka',
+    'ECU napaka',
+    'električna napaka',
+    'kaj povedati ob klicu',
+  ].forEach((term) => assert.match(avtoelektrika, new RegExp(term, 'i'), `${term} should be present on avtoelektrika page`));
+});

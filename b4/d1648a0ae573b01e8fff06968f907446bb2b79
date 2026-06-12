@@ -1,0 +1,31 @@
+tests/seo.test.mjs
+  s_e06afca24dc5a9::t_44834dd11dd4e9 167-182
+  s_e06afca24dc5a9::t_f0f2ee69d90f98 183-198
+  s_e06afca24dc5a9::t_378d121c0098a2 199-213
+src/app/chip-tuning/page.tsx
+  s_e06afca24dc5a9::t_a21e80a5550ffe 69-71
+  s_e06afca24dc5a9::t_97eb33e5f15cdf 2,6-7,19,21-25,27-31,33,35-68,72-78,80
+src/app/kontakt/page.tsx
+  s_e06afca24dc5a9::t_e90e0d0c6dbfc8 3,16-18,27,30,33-42,45-52
+  s_e06afca24dc5a9::t_f2d4fcee9f0264 31-32
+docs/superpowers/plans/2026-06-12-organic-traffic-content.md
+  s_e06afca24dc5a9::t_1b26e63dd61186 1-103
+src/app/avtoelektrika/page.tsx
+  s_e06afca24dc5a9::t_6bb7174437a1ac 62-67,80,89,96-105,112-114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "b4d1648a0ae573b01e8fff06968f907446bb2b79",
+  "prompts": {},
+  "sessions": {
+    "s_e06afca24dc5a9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ebc53-90fb-7a40-90b8-66232ff224e9",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+tests/seo.test.mjs
+  s_e06afca24dc5a9::t_dc98350d31b27e 142-166
+next.config.js
+  s_e06afca24dc5a9::t_bc81bf786502dc 17-18,21,23-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "023dc4ccd43d44213943e813fb8537952d9c5ed7",
+  "prompts": {},
+  "sessions": {
+    "s_e06afca24dc5a9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ebc53-90fb-7a40-90b8-66232ff224e9",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

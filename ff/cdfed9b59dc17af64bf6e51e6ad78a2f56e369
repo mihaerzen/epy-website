@@ -1,0 +1,25 @@
+tests/seo.test.mjs
+  s_e06afca24dc5a9::t_3f24ca7a9770e9 99-141
+src/components/GoogleAnalyticsPageView.tsx
+  s_e06afca24dc5a9::t_a667eb43890a5b 1-33
+src/components/GoogleAnalytics.tsx
+  s_e06afca24dc5a9::t_a667eb43890a5b 1-60
+src/app/layout.tsx
+  s_e06afca24dc5a9::t_a667eb43890a5b 6,52
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "ffcdfed9b59dc17af64bf6e51e6ad78a2f56e369",
+  "prompts": {},
+  "sessions": {
+    "s_e06afca24dc5a9": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ebc53-90fb-7a40-90b8-66232ff224e9",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

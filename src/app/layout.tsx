@@ -3,6 +3,7 @@ import type {Metadata} from 'next';
 import {Navigation} from "@/components/Navigation/Navigation";
 import {Footer} from "@/components/Footer/Footer";
 import {BUSINESS_NAME, localBusinessJsonLd, SITE_DESCRIPTION, SITE_URL} from "@/lib/seo";
+import {GoogleAnalytics} from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -48,6 +49,7 @@ export default function RootLayout({
     <html lang="sl">
     <body
       className="text-white bg-black bg-[url(/back.jpg)] bg-no-repeat bg-fixed bg-[center_top] min-h-screen flex flex-col">
+    <GoogleAnalytics/>
     <script type="application/ld+json">{JSON.stringify(localBusinessJsonLd)}</script>
     <Navigation/>
 

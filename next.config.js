@@ -14,13 +14,14 @@ const nextConfig = {
   },
   async headers() {
     // Permissive but real hardening. script/style use 'unsafe-inline' because Next.js
-    // ships inline bootstrap scripts and Tailwind injects styles; all other sources are
-    // locked to 'self'. There are no third-party scripts on this site.
+    // ships inline bootstrap scripts and Tailwind injects styles. Google Analytics
+    // origins are scoped to the consent-denied GA4 tag and measurement transports.
     const contentSecurityPolicy = [
       "default-src 'self'",
-      "img-src 'self' data:",
+      "img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com",
       "style-src 'self' 'unsafe-inline'",
-      "script-src 'self' 'unsafe-inline'",
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+      "connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com",
       "font-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",

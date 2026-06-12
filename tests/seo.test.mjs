@@ -139,3 +139,28 @@ test('Google Analytics is configured for consent-denied cookieless page analytic
   );
   assert.match(pageView, /'page_view'/, 'client-side route changes should send page_view events');
 });
+
+test('Content Security Policy allows consent-denied Google Analytics requests', () => {
+  const nextConfig = read('next.config.js');
+
+  assert.match(
+    nextConfig,
+    /script-src[^"]*https:\/\/www\.googletagmanager\.com/,
+    'CSP should allow the Google tag script origin',
+  );
+  assert.match(
+    nextConfig,
+    /connect-src[^"]*https:\/\/www\.google-analytics\.com/,
+    'CSP should allow GA4 measurement requests',
+  );
+  assert.match(
+    nextConfig,
+    /connect-src[^"]*https:\/\/region1\.google-analytics\.com/,
+    'CSP should allow regional GA4 measurement requests',
+  );
+  assert.match(
+    nextConfig,
+    /img-src[^"]*https:\/\/www\.google-analytics\.com/,
+    'CSP should allow image-pixel GA4 fallbacks',
+  );
+});

@@ -1,0 +1,23 @@
+tests/seo.test.mjs
+  s_09fc53d22adfc1::t_caa32843c7566a 100,105-106,110-111
+  s_09fc53d22adfc1::t_b589e4a5be6358 101-104,107-109,112-119
+instrumentation-client.ts
+  s_09fc53d22adfc1::t_52cf92871e2292 3,5
+  s_09fc53d22adfc1::t_b35873adc80ebc 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "dcb5356da4bd40524f4c207cffe4b600fb22874d",
+  "prompts": {},
+  "sessions": {
+    "s_09fc53d22adfc1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ed4d4-c301-77d3-bac2-cb573d3be9e3",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

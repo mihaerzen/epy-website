@@ -1,0 +1,25 @@
+src/components/ServiceLinks.tsx
+  s_09fc53d22adfc1::t_c3ac3e1985d963 12
+pnpm-workspace.yaml
+  s_09fc53d22adfc1::t_4fa88ca324cf96 5
+src/components/Navigation/Navigation.tsx
+  s_09fc53d22adfc1::t_c3ac3e1985d963 13-19
+next.config.js
+  s_09fc53d22adfc1::t_e8cbeed033704a 34,37,39-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.8",
+  "base_commit_sha": "c929103bfd1c945d43c26d7782e3af840362007c",
+  "prompts": {},
+  "sessions": {
+    "s_09fc53d22adfc1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019ed4d4-c301-77d3-bac2-cb573d3be9e3",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Miha Eržen <miha.erzen1@gmail.com>"
+    }
+  }
+}

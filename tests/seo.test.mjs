@@ -108,6 +108,11 @@ test('PostHog client initialization uses the public project token', () => {
   );
   assert.match(
     instrumentation,
+    /from "posthog-js\/dist\/module\.full\.no-external"/,
+    'PostHog should use the no-external bundle so ad blockers cannot block lazy extension script filenames',
+  );
+  assert.match(
+    instrumentation,
     /const posthogToken = "phc_sK6pmYEcfuf9QjjKAfAnWArpjqaUBuDGJy5JUUB58XnA"/,
     'PostHog should use the hardcoded public project token',
   );

@@ -99,6 +99,7 @@ test('homepage LCP image and critical path assets are optimized', () => {
 
 test('PostHog client initialization uses the public project token', () => {
   const instrumentation = read('instrumentation-client.ts');
+  const nextConfig = read('next.config.js');
 
   assert.doesNotMatch(
     instrumentation,
@@ -114,6 +115,21 @@ test('PostHog client initialization uses the public project token', () => {
     instrumentation,
     /posthog\.init\(posthogToken,/,
     'PostHog should initialize with the checked token',
+  );
+  assert.doesNotMatch(
+    `${instrumentation}\n${nextConfig}`,
+    /\/ingest/,
+    'PostHog proxy path should not use the adblocker-targeted /ingest path',
+  );
+  assert.match(
+    instrumentation,
+    /api_host:\s*"\/mlescevo"/,
+    'PostHog should send browser requests through the app-specific proxy path',
+  );
+  assert.match(
+    nextConfig,
+    /source:\s*'\/mlescevo\/static\/:path\*'[\s\S]*source:\s*'\/mlescevo\/array\/:path\*'[\s\S]*source:\s*'\/mlescevo\/:path\*'/,
+    'PostHog rewrites should proxy static, array, and API traffic through the same app-specific path',
   );
 });
 

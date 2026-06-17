@@ -97,6 +97,26 @@ test('homepage LCP image and critical path assets are optimized', () => {
   assert.match(tsconfig, /"target":\s*"es2022"/, 'TypeScript output target should be modernized');
 });
 
+test('PostHog client initialization uses the public project token', () => {
+  const instrumentation = read('instrumentation-client.ts');
+
+  assert.doesNotMatch(
+    instrumentation,
+    /process\.env\.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN/,
+    'PostHog should not depend on a missing production env var',
+  );
+  assert.match(
+    instrumentation,
+    /const posthogToken = "phc_sK6pmYEcfuf9QjjKAfAnWArpjqaUBuDGJy5JUUB58XnA"/,
+    'PostHog should use the hardcoded public project token',
+  );
+  assert.match(
+    instrumentation,
+    /posthog\.init\(posthogToken,/,
+    'PostHog should initialize with the checked token',
+  );
+});
+
 test('contact page is optimized for local EPJ avtoelektrika intent', () => {
   const contact = read('src/app/kontakt/page.tsx');
 

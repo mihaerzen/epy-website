@@ -1,6 +1,8 @@
 import posthog from "posthog-js";
 
-posthog.init(process.env.NEXT_PUBLIC_POSTHOG_PROJECT_TOKEN!, {
+const posthogToken = "phc_sK6pmYEcfuf9QjjKAfAnWArpjqaUBuDGJy5JUUB58XnA";
+
+posthog.init(posthogToken, {
   api_host: "/ingest",
   ui_host: "https://eu.posthog.com",
   defaults: "2026-01-30",

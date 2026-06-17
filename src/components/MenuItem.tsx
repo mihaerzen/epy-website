@@ -10,10 +10,11 @@ export const MenuItem: FC<PropsWithChildren<
   {
     href: string;
     active?: boolean;
-  }>> = ({children, href, active}) => {
+    onClick?: () => void;
+  }>> = ({children, href, active, onClick}) => {
   return (
     <li className={`${LINK_CLASS_NAME} ${active ? 'text-black' : 'text-white'} hover:text-black`}>
-      <Link href={href}>
+      <Link href={href} onClick={onClick}>
         {children}
       </Link>
     </li>

@@ -4,11 +4,11 @@ import {Heading1, Heading2, Paragraph} from "@/components/Heading";
 import {Hyperlink} from "@/components/Hyperlink";
 
 import mapImage from './map.webp';
-import Link from "next/link";
 import {Vizitka} from "@/components/Vizitka";
 import {MAP_URL} from "@/constants";
 import {JsonLd} from "@/components/JsonLd";
 import {breadcrumbJsonLd, createMetadata} from "@/lib/seo";
+import {MapLink} from "@/components/MapLink";
 
 const PATH = '/kontakt';
 
@@ -49,7 +49,9 @@ export default function Kontakt() {
         in Dolenjske. Pred obiskom priporočamo klic, da preverimo osnovne podatke o vozilu in napaki.
       </Paragraph>
 
-      <Link href={MAP_URL} target="_blank"><Image style={{width: '100%', maxWidth: 750, height: 'auto'}} src={mapImage} alt="Zemljevid lokacije EPJ Jože Perpar s.p. v Ivančni Gorici"/></Link>
+      <MapLink href={MAP_URL}>
+        <Image style={{width: '100%', maxWidth: 750, height: 'auto'}} src={mapImage} alt="Zemljevid lokacije EPJ Jože Perpar s.p. v Ivančni Gorici"/>
+      </MapLink>
     </Container>
   </>
 }

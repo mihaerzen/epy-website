@@ -5,6 +5,7 @@ import {PhoneCta} from "@/components/PhoneCta";
 import {ServiceLinks} from "@/components/ServiceLinks";
 import {JsonLd} from "@/components/JsonLd";
 import {breadcrumbJsonLd, createMetadata, servicePageJsonLd} from "@/lib/seo";
+import {PageViewTracker} from "@/components/PageViewTracker";
 
 const PATH = '/avtodiagnostika';
 
@@ -18,6 +19,7 @@ export const metadata = createMetadata({
 export default function Avtodiagnostika() {
   return (
     <Container>
+      <PageViewTracker event="avtodiagnostika_page_viewed"/>
       <JsonLd data={servicePageJsonLd(PATH)}/>
       <JsonLd data={breadcrumbJsonLd(PATH)}/>
       <Heading1>Avtodiagnostika in računalniška diagnostika vozil</Heading1>

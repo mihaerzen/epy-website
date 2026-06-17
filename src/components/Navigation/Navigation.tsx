@@ -8,17 +8,19 @@ import Link from "next/link";
 import Image from "next/image";
 import {usePathname, useRouter} from "next/navigation";
 import {ChangeEventHandler, useCallback} from "react";
+import posthog from 'posthog-js';
+
+const avtoelektrikaRoutes = [
+  '/avtoelektrika',
+  '/avtodiagnostika',
+  '/popravilo-avto-elektrike',
+  '/popravilo-avtoradia',
+  '/popravilo-avtomobilske-elektronike',
+];
 
 export const Navigation = () => {
   const pathname = usePathname()
   const {push} = useRouter();
-  const avtoelektrikaRoutes = [
-    '/avtoelektrika',
-    '/avtodiagnostika',
-    '/popravilo-avto-elektrike',
-    '/popravilo-avtoradia',
-    '/popravilo-avtomobilske-elektronike',
-  ];
 
   const menuItems: { text: string, href: string, active: boolean }[] = [
     {
@@ -46,7 +48,9 @@ export const Navigation = () => {
   const activeMenuItemText = activeMenuItem?.text || '';
 
   const navigateFromMobileMenu = useCallback<ChangeEventHandler<HTMLSelectElement>>((e) => {
-    push(e.target.value)
+    const href = e.target.value;
+    posthog.capture('navigation_clicked', {href, source: 'mobile'});
+    push(href);
   }, [push])
 
   // Both layouts are rendered on the server and toggled with CSS (Tailwind `md:`),
@@ -91,10 +95,16 @@ export const Navigation = () => {
           </Link>
 
           <menu className="absolute flex gap-8 bg-none left-60 bottom-4 items-center">
-            {menuItems.map(({text, href, active}) => <MenuItem key={href} active={href !== '/' && active}
-                                                               href={href}>
-              {text}
-            </MenuItem>)}
+            {menuItems.map(({text, href, active}) => (
+              <MenuItem
+                key={href}
+                active={href !== '/' && active}
+                href={href}
+                onClick={() => posthog.capture('navigation_clicked', {href, source: 'desktop'})}
+              >
+                {text}
+              </MenuItem>
+            ))}
           </menu>
         </div>
       </Container>

@@ -5,6 +5,7 @@ import {JsonLd} from "@/components/JsonLd";
 import {breadcrumbJsonLd, createMetadata, servicePageJsonLd} from "@/lib/seo";
 import {PhoneCta} from "@/components/PhoneCta";
 import {ServiceLinks} from "@/components/ServiceLinks";
+import {PageViewTracker} from "@/components/PageViewTracker";
 
 const PATH = '/chip-tuning';
 
@@ -18,6 +19,7 @@ export const metadata = createMetadata({
 export default function ChipTuning() {
   return (
     <Container>
+      <PageViewTracker event="chip_tuning_page_viewed"/>
       <JsonLd data={servicePageJsonLd(PATH)}/>
       <JsonLd data={breadcrumbJsonLd(PATH)}/>
       <Heading1>
